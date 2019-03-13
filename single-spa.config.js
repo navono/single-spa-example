@@ -12,8 +12,17 @@ registerApplication(
     location.pathname.startsWith('/home')
 );
 
-registerApplication('navBar', () => import('./packages/navBar/index.js').then(mod => mod.navBar), () => true);
-// registerApplication('navBar', () => import('./packages/navBar/navBar.app.js').then(mod => mod.navBar), () => true);
+registerApplication(
+  'navBar',
+  () => import('./packages/navBar/index.js').then(mod => mod.navBar),
+  () => true
+);
+
+registerApplication(
+  'angularJS',
+  () => import ('./packages/angularJS/angularJS.app.js'),
+  pathPrefix('/angularJS'),
+);
 
 
 // `loadingFunction` must be a function that returns a Promise (or an async function). 
