@@ -1,12 +1,11 @@
 const path = require('path');
-const webpack = require('webpack');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
   mode: 'development',
   entry: {
     // Set the single-spa config as the project entry point
-    'single-spa.config': 'single-spa.config.js',
+    'single-spa': 'single-spa.config.js',
   },
   output: {
     publicPath: '/dist/',
@@ -19,12 +18,14 @@ module.exports = {
         // Webpack style loader added so we can use materialize
         test: /\.css$/,
         use: ['style-loader', 'css-loader']
-      }, {
+      },
+      {
         test: /\.js$/,
         exclude: [path.resolve(__dirname, 'node_modules')],
         loader: 'babel-loader',
-      }, {
-        // This plugin will allow us to use AngularJS HTML templates
+      },
+      {
+        // This plugin will allow us to use html templates when we get to the angularJS app 
         test: /\.html$/,
         exclude: /node_modules/,
         loader: 'html-loader',
@@ -35,11 +36,14 @@ module.exports = {
     fs: 'empty'
   },
   resolve: {
-    modules: [path.resolve(__dirname, 'node_modules')],
+    modules: [
+      __dirname,
+      'node_modules',
+    ],
   },
   plugins: [
-    // A webpack plugin to remove/clean the output folder before building
-    new CleanWebpackPlugin(),
+    // A webpack plugin to remove/clean the build folder(s) before building
+    new CleanWebpackPlugin()
   ],
   devtool: 'source-map',
   externals: [],

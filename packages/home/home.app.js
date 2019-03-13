@@ -3,13 +3,9 @@ import ReactDOM from 'react-dom';
 import SingleSpaReact from 'single-spa-react';
 import Home from './component';
 
-function domElementGetter() {
-  return document.getElementById('home');
-}
-
 const reactLifecycles = SingleSpaReact({
   React,
-  React,
+  ReactDOM,
   rootComponent: Home,
   domElementGetter,
 });
@@ -25,3 +21,7 @@ export const mount = [
 export const unmount = [
   reactLifecycles.unmount,
 ];
+
+function domElementGetter() {
+  return document.getElementById('home');
+}
