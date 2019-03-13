@@ -3,8 +3,17 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "start": "webpack-dev-server --open",
+    "build": "webpack -- config webpack.config.js -p"
+  },
   "dependencies": {
-    "single-spa": "^4.1.1"
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
+    "react-router-dom": "^4.3.1",
+    "react-transition-group": "^2.6.0",
+    "single-spa": "^4.1.1",
+    "single-spa-react": "^2.9.0"
   },
   "devDependencies": {
     "@babel/core": "^7.3.4",
