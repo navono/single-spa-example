@@ -39,7 +39,7 @@ module.exports = {
   },
   plugins: [
     // A webpack plugin to remove/clean the output folder before building
-    new CleanWebpackPlugin(['dist']),
+    new CleanWebpackPlugin(),
   ],
   devtool: 'source-map',
   externals: [],
