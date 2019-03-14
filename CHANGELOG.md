@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+# [0.3.0](https://github.com/navono/single-spa-example/compare/v0.2.0...v0.3.0) (2019-03-14)
+
+
+### Features
+
+* add commitlint ([874d8e2](https://github.com/navono/single-spa-example/commit/874d8e2))
+* **config:** add commitizen format commit messages ([f1a1f6a](https://github.com/navono/single-spa-example/commit/f1a1f6a))
+* 增加了 lerna 用于管理 package ([ad8b060](https://github.com/navono/single-spa-example/commit/ad8b060))
+
+
+
 # 0.2.0 (2019-03-13)
 
 
